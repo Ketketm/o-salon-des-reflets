@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://o-salon-des-reflets.fr/</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://o-salon-des-reflets.fr/assets/photos/hero.jpg</image:loc>
+      <image:caption>Intérieur du salon Ô Salon des Reflets à Montauban</image:caption>
+      <image:title>Vue panoramique du salon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://o-salon-des-reflets.fr/assets/photos/galerie-6.jpg</image:loc>
+      <image:caption>Devanture Ô Salon des Reflets, 200 Bd Vincent Auriol, Montauban</image:caption>
+      <image:title>Devanture du salon de coiffure</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://o-salon-des-reflets.fr/assets/photos/gaelle.jpg</image:loc>
+      <image:caption>Gaëlle, coiffeuse visagiste au travail</image:caption>
+      <image:title>Gaëlle au salon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://o-salon-des-reflets.fr/assets/photos/salon-1.jpg</image:loc>
+      <image:caption>Espace shampoing du salon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://o-salon-des-reflets.fr/assets/photos/salon-2.jpg</image:loc>
+      <image:caption>Présentoir produits sous miroir sculpté</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
