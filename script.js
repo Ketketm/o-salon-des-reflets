@@ -352,6 +352,10 @@
     if (!viewport || !handle) return;
 
     let dragging = false;
+    let isTouch = false;
+    let decided = false;
+    let startX = 0, startY = 0;
+    const DIRECTION_THRESHOLD = 8;
 
     const setPos = (clientX) => {
       const rect = viewport.getBoundingClientRect();
@@ -361,25 +365,49 @@
     };
 
     const onDown = (e) => {
-      dragging = true;
-      document.body.style.cursor = 'ew-resize';
-      const x = e.touches ? e.touches[0].clientX : e.clientX;
-      setPos(x);
-      e.preventDefault();
+      isTouch = !!e.touches;
+      const t = e.touches ? e.touches[0] : e;
+      startX = t.clientX;
+      startY = t.clientY;
+      decided = !isTouch;
+      if (!isTouch) {
+        dragging = true;
+        document.body.style.cursor = 'ew-resize';
+        setPos(t.clientX);
+        e.preventDefault();
+      }
     };
+
     const onMove = (e) => {
+      const t = e.touches ? e.touches[0] : e;
+
+      if (isTouch && !decided) {
+        const dx = Math.abs(t.clientX - startX);
+        const dy = Math.abs(t.clientY - startY);
+        if (dx + dy < DIRECTION_THRESHOLD) return;
+        decided = true;
+        if (dx > dy) {
+          dragging = true;
+        } else {
+          dragging = false;
+          return;
+        }
+      }
+
       if (!dragging) return;
-      const x = e.touches ? e.touches[0].clientX : e.clientX;
-      setPos(x);
-      if (e.touches) e.preventDefault();
+      setPos(t.clientX);
+      if (isTouch) e.preventDefault();
     };
+
     const onUp = () => {
       dragging = false;
+      decided = false;
+      isTouch = false;
       document.body.style.cursor = '';
     };
 
     viewport.addEventListener('mousedown', onDown);
-    viewport.addEventListener('touchstart', onDown, { passive: false });
+    viewport.addEventListener('touchstart', onDown, { passive: true });
     window.addEventListener('mousemove', onMove);
     window.addEventListener('touchmove', onMove, { passive: false });
     window.addEventListener('mouseup', onUp);

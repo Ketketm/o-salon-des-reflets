@@ -2453,6 +2453,8 @@ body.has-ribbon.is-ribbon-hidden .site-header { top: 0; }
   background: var(--c-bg-alt);
   --pos: 50%;
   isolation: isolate;
+  /* Mobile : autorise le scroll vertical, le JS gère le drag horizontal */
+  touch-action: pan-y;
 }
 .ba__layer {
   position: absolute;
