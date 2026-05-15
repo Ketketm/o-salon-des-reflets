@@ -855,10 +855,6 @@ h1 em, h2 em, h3 em, .reserver__title em {
   margin: 0 auto;
 }
 
-/* Mobile : cacher 2 photos pour n'en montrer que 4 (2×2) */
-@media (max-width: 767px) {
-  .galerie__item--desktop-only { display: none; }
-}
 
 .galerie__item {
   margin: 0;
