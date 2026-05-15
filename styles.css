@@ -2428,9 +2428,23 @@ body.has-ribbon.is-ribbon-hidden .site-header { top: 0; }
   margin: 0 auto;
 }
 
+/* Mobile : la 3ème paire (orpheline) prend toute la largeur */
+@media (max-width: 767px) {
+  .results__grid > .result.ba:nth-child(3):last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop : 3 paires alignées en ligne */
 @media (min-width: 768px) {
   .results__grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-6) var(--s-5);
+  }
+}
+
+@media (min-width: 768px) {
+  .results__grid {
     gap: var(--s-6) var(--s-5);
   }
 }
@@ -2798,12 +2812,6 @@ body.has-ribbon.is-ribbon-hidden .site-header { top: 0; }
   line-height: 1.4;
 }
 
-@media (min-width: 768px) {
-  .results__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-6) var(--s-5);
-  }
-}
 
 /* ----- 28. Moment éditorial : phrase script sur photo blurée ----------- */
 
